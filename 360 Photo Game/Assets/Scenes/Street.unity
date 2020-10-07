@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 581447132}
   - component: {fileID: 581447131}
   - component: {fileID: 581447129}
+  - component: {fileID: 581447130}
   m_Layer: 0
   m_Name: Destination Pin
   m_TagString: Untagged
@@ -151,7 +152,20 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 5.2310004, z: 5.123456}
-  m_Center: {x: 0, y: 0.024888754, z: -1.4266453}
+  m_Center: {x: 0, y: 0, z: -1.4266453}
+--- !u!114 &581447130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581447128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c18a0cec8165e11b7ec9e969c46fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Park
 --- !u!33 &581447131
 MeshFilter:
   m_ObjectHideFlags: 0

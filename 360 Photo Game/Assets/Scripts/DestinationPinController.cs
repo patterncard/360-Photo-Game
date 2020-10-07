@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRStandardAssets.Utils;
 
+[RequireComponent(typeOf(VRInteractiveItem))]
 public class DestinationPinController : MonoBehaviour
 {
     public string sceneName;
