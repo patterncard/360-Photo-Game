@@ -7,15 +7,22 @@ using VRStandardAssets.Utils;
 public class DestinationPinController : MonoBehaviour
 {
     public string sceneName;
+    VRInteractiveItem vrInteractive;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        vrInteractive = GetComponent<VRInteractiveItem>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void ChangeScene(){
+        SceneManager.LoadScene(sceneName);
+    }
+
+    void OnEnable(){
+        vrInteractive.OnClick += ChangeScene;
+    }
+
+    void OnDisable(){
+        vrInteractive.OnClick -= ChangeScene;
     }
 }
