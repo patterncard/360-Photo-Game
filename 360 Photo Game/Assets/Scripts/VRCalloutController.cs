@@ -15,6 +15,8 @@ public class VRCalloutController : MonoBehaviour
     void Awake()
     {
         vrInteractive = GetComponent<VRInteractiveItem>();
+
+        canvas.enabled = isInitiallyVisible;
     }
 
     void OnEnable()
@@ -24,11 +26,25 @@ public class VRCalloutController : MonoBehaviour
             vrInteractive.OnOver += ShowCanvas;
             vrInteractive.OnOut += HideCanvas;
         }
+
+        if(isClickActivated)
+        {
+            vrInteractive.OnClick += ToggleCanvas;
+        }
+    }
+
+    void ToggleCanvas()
+    {
+        canvas.enabled = !canvas.enabled;
     }
 
     void OnDisable()
     {
-
+        if(isHoverActivated)
+        {
+            vrInteractive.OnOver -= ShowCanvas;
+            vrInteractive.OnOut -= HideCanvas;
+        }
     }
 
     void ShowCanvas()
