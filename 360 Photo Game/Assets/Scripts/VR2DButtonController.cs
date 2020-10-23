@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using UnityEngine;
 using VRStandardAssets.Utils;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(VRInteractiveItem))]
-public class VR2DButton : MonoBehaviour
+public class VR2DButtonController : MonoBehaviour
 {
     VRInteractiveItem VRInteractive;
     Button button;
@@ -18,10 +19,10 @@ public class VR2DButton : MonoBehaviour
     // Update is called once per frame
     void OnEnable()
     {
-        
+        vrInteractive.OnClick += button.OnClick.Invoke;
     }
-         void OnDisable()
+    void OnDisable()
     {
-        
+        vrInteractive.OnClick -= button.OnClick.Invoke;
     }
 }
